@@ -22,8 +22,8 @@ def run():
         # ------------------------------
 
         # cameras variables
-        left_camera_source = 2
-        right_camera_source = 4
+        left_camera_source = 0
+        right_camera_source = 0
         pixel_width = 640
         pixel_height = 480
         angle_width = 78

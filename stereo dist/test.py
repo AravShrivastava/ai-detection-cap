@@ -81,25 +81,11 @@ def run():
             # grayscale
             frame1 = cv2.cvtColor(frame1,cv2.COLOR_BGR2GRAY)
 
-            # 2D
-            frame1 = 
+            # 2D1
+            frame1 = cv2.filter2D(frame1, ddepth=-1, kernel=np.ones((5, 5), np.float32)/30)
 
             # blur
             frame1 = cv2.GaussianBlur(frame1,(gblur,gblur),0)
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
             # ------------------------------
             # final frame display 
             # ------------------------------
