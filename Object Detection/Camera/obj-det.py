@@ -1,10 +1,11 @@
 import cv2
 import numpy as np
 import argparse
+import requests
+from clint.textui import progress
 
 ap = argparse.ArgumentParser()
 ap.add_argument('-c', '--config', required=True,help = 'path to yolo config file')
-ap.add_argument('-w', '--weights', required=True,help = 'path to yolo pre-trained weights')
 ap.add_argument('-cl', '--classes', required=True,help = 'path to text file containing class names')
 args = ap.parse_args()
 
@@ -13,6 +14,17 @@ def draw_prediction(img, class_id, x, y, x_plus_w, y_plus_h):
     color = COLORS[class_id]
     cv2.rectangle(img, (x, y), (x_plus_w, y_plus_h), color, 2)
     cv2.putText(img, label, (x - 10, y - 10), cv2.FONT_HERSHEY_PLAIN, 2, color, 2)
+
+def download_file(url):
+    r = requests.get(url, stream=True)
+    path = 'yolov3.weights'
+    with open(path, 'wb') as f:
+        total_length = int(r.headers.get('content-length'))
+        for chunk in progress.mill(r.iter_content(chunk_size=1024), expected_size=(total_length/1024) + 1): 
+            if chunk:
+                f.write(chunk)
+                f.flush()
+    return path
 
 
 image = cv2.VideoCapture(0)
@@ -23,7 +35,8 @@ classes = None
 with open(args.classes, 'r') as f:
     classes = [line.strip() for line in f.readlines()]
 COLORS = np.random.uniform(0, 255, size=(len(classes), 3))
-net = cv2.dnn.readNet(args.weights, args.config)
+weights = download_file('https://pjreddie.com/media/files/yolov3.weights')
+net = cv2.dnn.readNet(weights, args.config)
 while True:
     success, img = image.read()
     blob = cv2.dnn.blobFromImage(img, scale, (416, 416), (0, 0, 0), True, crop=False)
