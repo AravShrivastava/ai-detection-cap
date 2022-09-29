@@ -1,14 +1,14 @@
 import cv2
 import argparse
 import numpy as np
+import requests
+from clint.textui import progress
 
 ap = argparse.ArgumentParser()
 ap.add_argument('-i', '--image', required=True,help = 'path to input image')
 ap.add_argument('-c', '--config', required=True,help = 'path to yolo config file')
-ap.add_argument('-w', '--weights', required=True,help = 'path to yolo pre-trained weights')
 ap.add_argument('-cl', '--classes', required=True,help = 'path to text file containing class names')
 args = ap.parse_args()
-
 
 def get_output_layers(net):
     
@@ -30,6 +30,17 @@ def draw_prediction(img, class_id, confidence, x, y, x_plus_w, y_plus_h):
 
     cv2.putText(img, label, (x-10,y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
+def download_file(url):
+    r = requests.get(url, stream=True)
+    path = 'yolov3.weights'
+    with open(path, 'wb') as f:
+        total_length = int(r.headers.get('content-length'))
+        for chunk in progress.mill(r.iter_content(chunk_size=1024), expected_size=(total_length/1024) + 1): 
+            if chunk:
+                f.write(chunk)
+                f.flush()
+    return path
+
     
 image = cv2.imread(args.image)
 
@@ -43,7 +54,8 @@ with open(args.classes, 'r') as f:
 
 COLORS = np.random.uniform(0, 255, size=(len(classes), 3))
 
-net = cv2.dnn.readNet(args.weights, args.config)
+weights = download_file('https://pjreddie.com/media/files/yolov3.weights')
+net = cv2.dnn.readNet(weights, args.config)
 
 blob = cv2.dnn.blobFromImage(image, scale, (416,416), (0,0,0), True, crop=False)
 
