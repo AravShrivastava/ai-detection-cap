@@ -109,9 +109,7 @@ while True:
 		cv2.line(frame, (30, 30), (230, 30), BLACK, 28)
 
 		# Drawing Text on the screen
-		cv2.putText(
-			frame, f"Distance: {round(Distance,2)} CM", (30, 35),
-		fonts, 0.6, GREEN, 2)
+		cv2.putText(frame, f"Distance: {round(Distance,2)} CM", (30, 35),fonts, 0.6, GREEN, 2)
 
 	# show the frame on the screen
 	cv2.imshow("frame", frame)
