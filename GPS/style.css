@@ -1,0 +1,29 @@
+body{
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: bisque;
+}
+
+.points{
+  color: blue;
+}
+
+.button{
+  
+    border: black;
+    color: blue;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  
+}
+
+#googleMap{
+  width: 80%;
+  height: 400px;
+  margin: 20px auto;
+}
