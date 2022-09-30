@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src = "https://kit.fontawesom.com/ab2155e76b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://fontawesome.com/icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+    <link rel="stylesheet" href="style1.css">
+    <title>Map</title>
+</head>
+<body>
+
+ <div class="main">
+    <div class="Bkg">
+      <h1>MAPWORKS</h1>
+      <p>Offering services to provide best directions</p>
+      <h3>From Current Location to your destination</h3>
+      <div class="points">  
+      <div class="form-group">
+        <label for="From"><i class="fa-solid fa-circle-dot"></i></label>
+        <div class="input">
+        <input type="text" id="From" placeholder="Current Location" class="form-group">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="To"><i class="fa-solid fa-location-dot"></i></label>
+        <div class="input">
+        <input type="text" id="To" placeholder="Destination" class="input">
+        </div>
+      </div>
+      </div> 
+     
+     <div class="col-xs-offset-2">
+      <button type="button">Directions</button>
+     </div>
+
+      
+     
+    </div>
+
+    <div class="container">
+      <div id = "googleMap">
+
+      </div>
+      <div id = "output">
+
+      </div>
+    </div>
+  </div>
+  <!--google map link -->
+   <script src="https:/maps.googleapis.com/maps/api/js?key=AIzaSyAKiS0r67tHreTzkuspwS8_nCLeeuflL5Q"></script>
+  <script src="app.js"></script>
+
+
+</body>
+</html>
