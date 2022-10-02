@@ -15,7 +15,5 @@ pip install requests
 
 pip install torchvision
 
-pip install pytorch
-
 pip install torch
 
