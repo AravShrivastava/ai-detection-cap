@@ -116,27 +116,10 @@ def run(input_path, output_path, model_path, model_type="large", optimize=True):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-
-    parser.add_argument('-i', '--input_path', 
-        default='input',
-        help='folder with input images'
-    )
-
-    parser.add_argument('-o', '--output_path', 
-        default='output',
-        help='folder for output images'
-    )
-
-    parser.add_argument('-m', '--model_weights', 
-        default='model-f6b98070.pt',
-        help='path to the trained weights of model'
-    )
-
-    parser.add_argument('-t', '--model_type', 
-        default='large',
-        help='model type: large or small'
-    )
-
+    parser.add_argument('-i', '--input_path', default='input', help='folder with input images')
+    parser.add_argument('-o', '--output_path', default='output', help='folder for output images')
+    parser.add_argument('-m', '--model_weights', default='model-f6b98070.pt', help='path to the trained weights of model')
+    parser.add_argument('-t', '--model_type', default='large', help='model type: large or small')
     parser.add_argument('--optimize', dest='optimize', action='store_true')
     parser.add_argument('--no-optimize', dest='optimize', action='store_false')
     parser.set_defaults(optimize=True)
