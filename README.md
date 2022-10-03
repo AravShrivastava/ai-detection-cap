@@ -3,7 +3,7 @@ Project work for competition.
 
 # PACKAGES TO INSTALL
 
-pip install opencv
+pip install opencv-contrib-python
 
 pip install timm
 
