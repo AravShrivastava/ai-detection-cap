@@ -17,17 +17,6 @@ def speak(audio):
     engine.say(audio)
     engine.runAndWait()
 
-def greetMe():
-    hour1 = int(datetime.datetime.now().hour1)
-    if hour1>=0 and hour1<=12:
-        speak("Good Morning")
-    elif hour1 >12 and hour1<=18:
-        speak("Good Afternoon ")
-
-    else:
-        speak("Good Evening")
-
-    speak("Please tell me, How can I help you ?")
 
 def takeCommand():
     r = speech_recognition.Recognizer()
@@ -46,13 +35,9 @@ def takeCommand():
         return "None"
     return query
 if __name__ == "__main__":
-    while True:
-        query = takeCommand().lower()
-        if "wake up" in query:
-            from greet import greetMe
-            greetMe()
-
             while True:
+             
+
                 query = takeCommand().lower()
                 if "go to sleep" in query:
                     speak("Ok , You can me call anytime")
@@ -83,15 +68,30 @@ if __name__ == "__main__":
                 elif "what is the date" in query:
                     strTime = datetime.datetime.now().strftime("%d-%m-%y")
                     speak(f"the time is {strTime}")
-                elif "Open Maps" in query:
+//Maps part
+                elif "open maps" in query:
+                 r = speech_recognition.Recognizer()
+                 with speech_recognition.Microphone() as source:
                     speak("Please tell your location")
-                    place1 = query
+                    print("Understanding..")
+                    r.adjust_for_ambient_noise(source, duration=0.2)
+                    audio = r.listen(source,0,4)
+                    place1 = r.recognize_google(audio)
+                    place1 = place1.lower()
+                    print("Current location : " + place1)
+                    speak(place1)
+                    sleep(3)
                     speak("Please tell your destination")
-                    place2 = query 
-                    driver = webdriver.Chrome("C://chromedriver.exe")
-  
-                    driver.get("https://www.google.com/maps/@23.232512,77.430784,12z")
-
+                    print("Understanding..")
+                    r.adjust_for_ambient_noise(source, duration=0.2)
+                    audio1 = r.listen(source,0,4)
+                    place2 = r.recognize_google(audio1)
+                    place2 = place2.lower()
+                    print("Destination : "+place2)
+                    speak(place2)
+                    
+                    driver = webdriver.Edge("C:\Users\vanshika.2812\Downloads\edgedriver")
+driver.get("https://www.google.co.in/maps/@23.9740114,78.422961,7z")
 sleep(2)
 
 def searchplace():
@@ -118,3 +118,5 @@ def searchplace():
             search_btn.click()
 
             find()
+
+
