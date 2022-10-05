@@ -4,7 +4,7 @@ Project work for competition.
 <ul>
 pip install opencv
 
-pip install timm
+pip install datetime
 
 pip install progress
 
@@ -23,4 +23,18 @@ pip install pyttsx3
 pip install pywhatkit
 
 pip install wikipedia
+
+pip install requests
+
+pip install bs4
+
+pip install selenium
+
+pip install tokenize
+
+pip install time
+
+
+
+
 </ul>
