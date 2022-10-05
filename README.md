@@ -34,7 +34,10 @@ pip install tokenize
 
 pip install time
 
-
-
+pip install visualizer
+  
+pip install tensorflow
+  
+pip install argparse
 
 </ul>
