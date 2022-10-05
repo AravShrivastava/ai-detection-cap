@@ -2,13 +2,25 @@
 Project work for competition.
 <h1>Packages used :</h1>
 <ul>
-open cv
+pip install opencv
 
-request
+pip install timm
 
-clint
+pip install progress
 
-torch
+pip install clint
 
-torch vision
+pip install requests
+
+pip install torchvision
+
+pip install pytorch
+
+pip install SpeechRecognition
+
+pip install pyttsx3
+
+pip install pywhatkit
+
+pip install wikipedia
 </ul>
