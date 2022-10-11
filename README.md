@@ -2,42 +2,199 @@
 Project work for competition.
 <h1>Packages used :</h1>
 <ul>
-pip install opencv
-
-pip install datetime
-
-pip install progress
-
-pip install clint
-
-pip install requests
-
-pip install torchvision
-
-pip install pytorch
-
-pip install SpeechRecognition
-
-pip install pyttsx3
-
-pip install pywhatkit
-
-pip install wikipedia
-
-pip install requests
-
-pip install bs4
-
-pip install selenium
-
-pip install tokenize
-
-pip install time
-
-pip install visualizer
-  
-pip install tensorflow
-  
-pip install argparse
+<h2>Package                      Version</h2>
+---------------------------- -----------
+absl-py                      1.2.0
+argon2-cffi                  21.3.0
+argon2-cffi-bindings         21.2.0
+args                         0.1.0
+asttokens                    2.0.8
+astunparse                   1.6.3
+async-generator              1.10
+attrs                        22.1.0
+awscli                       1.25.87
+backcall                     0.2.0
+beautifulsoup4               4.11.1
+bleach                       5.0.1
+boto3                        1.24.86
+botocore                     1.27.86
+cachetools                   5.2.0
+certifi                      2022.9.24
+cffi                         1.15.1
+charset-normalizer           2.1.1
+click                        8.1.3
+clint                        0.5.1
+cmake                        3.24.1.1
+colorama                     0.4.4
+comtypes                     1.1.14
+contextlib2                  21.6.0
+contourpy                    1.0.5
+cvzone                       1.5.6
+cycler                       0.11.0
+Cython                       0.29.32
+debugpy                      1.6.3
+decorator                    5.1.1
+defusedxml                   0.7.1
+dlib                         19.24.0
+docker                       6.0.0
+docutils                     0.16
+ecapture                     2.0.2
+entrypoints                  0.4
+exceptiongroup               1.0.0rc9
+executing                    1.1.0
+face-detection               0.2.2
+face-recognition             1.3.0
+face-recognition-models      0.3.0
+fastjsonschema               2.16.2
+feedparser                   6.0.10
+Flask                        2.2.2
+flatbuffers                  22.9.24
+fonttools                    4.37.4
+gast                         0.4.0
+google-auth                  2.12.0
+google-auth-oauthlib         0.4.6
+google-pasta                 0.2.0
+grpcio                       1.49.1
+h11                          0.14.0
+h5py                         3.7.0
+idna                         3.4
+ipykernel                    6.16.0
+ipython                      8.5.0
+ipython-genutils             0.2.0
+ipywidgets                   8.0.2
+itsdangerous                 2.1.2
+jaraco.classes               3.2.3
+jaraco.context               4.1.2
+jedi                         0.18.1
+Jinja2                       3.1.2
+jmespath                     1.0.1
+jsonschema                   4.16.0
+jupyter                      1.0.0
+jupyter_client               7.3.5
+jupyter-console              6.4.4
+jupyter-core                 4.11.1
+jupyterlab-pygments          0.2.2
+jupyterlab-widgets           3.0.3
+keras                        2.10.0
+Keras-Preprocessing          1.1.2
+keyring                      8.7
+keyrings.alt                 4.2.0
+kiwisolver                   1.4.4
+libclang                     14.0.6
+lxml                         4.9.1
+Markdown                     3.4.1
+MarkupSafe                   2.1.1
+matplotlib                   3.6.0
+matplotlib-inline            0.1.6
+mediapipe                    0.8.11
+mistune                      2.0.4
+more-itertools               8.14.0
+MouseInfo                    0.1.3
+nbclient                     0.6.8
+nbconvert                    7.0.0
+nbformat                     5.6.1
+nest-asyncio                 1.5.6
+notebook                     6.4.12
+numpy                        1.23.3
+oauthlib                     3.2.1
+object-detection             0.0.3
+opencv-contrib-python        4.6.0.66
+opencv-python                4.6.0.66
+opt-einsum                   3.3.0
+outcome                      1.2.0
+packaging                    21.3
+pandas                       1.5.0
+pandocfilters                1.5.0
+panopticapi                  0.1
+parso                        0.8.3
+pickleshare                  0.7.5
+Pillow                       9.2.0
+pip                          22.2.2
+progress                     1.6
+prometheus-client            0.14.1
+prompt-toolkit               3.0.31
+protobuf                     3.19.6
+psutil                       5.9.2
+pure-eval                    0.2.2
+pyasn1                       0.4.8
+pyasn1-modules               0.2.8
+PyAudio                      0.2.12
+PyAutoGUI                    0.9.53
+pycparser                    2.21
+PyGetWindow                  0.0.9
+Pygments                     2.13.0
+pyjokes                      0.6.0
+PyMsgBox                     1.0.9
+pyparsing                    3.0.9
+pyperclip                    1.8.2
+pypiwin32                    223
+PyRect                       0.2.0
+pyrsistent                   0.18.1
+PyScreeze                    0.1.28
+PySocks                      1.7.1
+python-dateutil              2.8.2
+pyttsx3                      2.90
+pytweening                   1.0.4
+pytz                         2022.4
+pywhatkit                    5.4
+pywin32                      304
+pywin32-ctypes               0.2.0
+pywinpty                     2.0.8
+PyYAML                       5.4.1
+pyzmq                        24.0.1
+qtconsole                    5.3.2
+QtPy                         2.2.0
+requests                     2.28.1
+requests-oauthlib            1.3.1
+rsa                          4.7.2
+ruamel.yaml                  0.17.21
+ruamel.yaml.clib             0.2.6
+s3transfer                   0.6.0
+scipy                        1.9.1
+seaborn                      0.12.0
+selenium                     4.5.0
+Send2Trash                   1.8.0
+setuptools                   63.2.0
+sgmllib3k                    1.0.0
+six                          1.16.0
+sniffio                      1.3.0
+sortedcontainers             2.4.0
+soupsieve                    2.3.2.post1
+SpeechRecognition            3.8.1
+stack-data                   0.5.1
+tabulate                     0.8.10
+tensorboard                  2.10.1
+tensorboard-data-server      0.6.1
+tensorboard-plugin-wit       1.8.1
+tensorflow                   2.10.0
+tensorflow-estimator         2.10.0
+tensorflow-io-gcs-filesystem 0.27.0
+termcolor                    2.0.1
+terminado                    0.16.0
+timm                         0.6.7
+tinycss2                     1.1.1
+torch                        1.12.1
+torchvision                  0.13.1
+tornado                      6.2
+tqdm                         4.64.1
+traitlets                    5.4.0
+trio                         0.22.0
+trio-websocket               0.9.2
+typing_extensions            4.3.0
+urllib3                      1.26.12
+voluptuous                   0.13.1
+wcwidth                      0.2.5
+webencodings                 0.5.1
+websocket-client             1.4.1
+Werkzeug                     2.2.2
+wheel                        0.37.1
+widgetsnbextension           4.0.3
+wikipedia                    1.4.0
+winshell                     0.6
+wolframalpha                 5.0.0
+wrapt                        1.14.1
+wsproto                      1.2.0
+xmltodict                    0.13.0
+yolo                         0.3.1
 
 </ul>
