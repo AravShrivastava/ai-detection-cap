@@ -92,7 +92,17 @@ def label_index_to_name(id):
     Returns a hash table with relevant labels as keys and their index as value.
     """
 
-    names = {3:"car", 6:"truck", 8: "bus", 4:"motorcycle", 2:"bicycle", 1:"person", 13:"stop sign",
-    92:"traffic light red", 93:"traffic light green", 94:"traffic light na"}
+    names = {
+        3:"car", 
+        6:"truck", 
+        8:"bus", 
+        4:"motorcycle", 
+        2:"bicycle", 
+        1:"person", 
+        13:"stop sign",
+        92:"traffic light red", 
+        93:"traffic light green", 
+        94:"traffic light na"
+        }
 
     return names[id]

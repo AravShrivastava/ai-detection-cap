@@ -28,11 +28,11 @@ def ssd_model(extractor):
         model_path = "ssd_pytorch/models/mobilenet-v1-ssd-mp-0_675.pth"
         
         # Load SSD net with mobilenet feature extractor
-        net = create_mobilenetv1_ssd(len(class_names), is_test=True)
+        net = create_mobilenetv1_ssd(num_classes, is_test=True)
         net.load(model_path)
         predictor = create_mobilenetv1_ssd_predictor(net, candidate_size=200)
 
-    if (extractor == "ssdmlite"):
+    elif (extractor == "ssdmlite"):
         print("Using feature extractor: mobilnet lite")
         model_path = "ssd_pytorch/models/mb2-ssd-lite-mp-0_686.pth"
         

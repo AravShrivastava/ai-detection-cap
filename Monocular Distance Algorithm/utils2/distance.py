@@ -73,7 +73,7 @@ def vehicles(frame, boxes, count, focal_length):
         distance = np.around((vehicle_width * focal_length) / (width*5), decimals=0)*5
         bb_text = "{:.0f}m".format(distance)
         font = cv.FONT_HERSHEY_SIMPLEX
-        cv.putText(frame, bb_text, (x1,int(y1-5)), font, 0.8, constants.box_colours()["motor"], 2)
+        cv.putText(frame, bb_text, (int(x1),int(y1-5)), font, 0.8, constants.box_colours()["motor"], 2)
 
     return frame
 
@@ -182,14 +182,14 @@ def estimate(frame, boxes, model_type, labels, video_file):
     if (model_type in coco.supported_models()):
         count = 0
 
-        for label in labels:
-            if label in [coco.label_names()["car"], coco.label_names()["truck"], coco.label_names()["bus"]]:
+        for labe in labels:
+            if labe in [coco.label_names()["car"], coco.label_names()["truck"], coco.label_names()["bus"]]:
                 frame = vehicles(frame, boxes, count, focal_length)
 
-            elif label in [coco.label_names()["person"]]:
+            elif labe in [coco.label_names()["person"]]:
                 frame = pedestrians(frame, boxes, count, focal_length)
 
-            elif label in [coco.label_names()["stopsign"]]:
+            elif labe in [coco.label_names()["stopsign"]]:
                 frame = stop_signs(frame, boxes, count, focal_length)
 
             count += 1
@@ -197,11 +197,11 @@ def estimate(frame, boxes, model_type, labels, video_file):
     elif (model_type in pascal.supported_models()):
         count = 0
 
-        for label in labels:       
-            if label in [pascal.label_names()["car"], coco.label_names()["bus"]]:
+        for labe in labels:       
+            if labe in [pascal.labels()["car"], coco.label_names()["bus"]]:
                 frame = vehicles(frame, boxes, count, focal_length)
 
-            elif label in [pascal.label_names()["person"]]:
+            elif labe in [pascal.labels()["person"]]:
                 frame = pedestrians(frame, boxes, count, focal_length)
 
             count += 1

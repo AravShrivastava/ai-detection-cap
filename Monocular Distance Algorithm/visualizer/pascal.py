@@ -29,13 +29,13 @@ def draw_boxes(image, probs, boxes, labels):
                 # Filter for classes
                 if (labels[i] in labels_motor):
                     box = boxes[i, :].numpy()
-                    cv.rectangle(image, (box[0], box[1]), (box[2], box[3]), colour_person, 2)
+                    cv.rectangle(image, (int(box[0]), int(box[1])), (int(box[2]), int(box[3])), colour_person, 2)
                 elif (labels[i] in labels_person):
                     box = boxes[i, :].numpy()
-                    cv.rectangle(image, (box[0], box[1]), (box[2], box[3]), colour_motor, 2)
+                    cv.rectangle(image, (int(box[0]), int(box[1])), (int(box[2]), int(box[3])), colour_motor, 2)
                 else:
                     box = boxes[i, :].numpy()
-                    cv.rectangle(image, (box[0], box[1]), (box[2], box[3]), colour_other, 2)
+                    cv.rectangle(image, (int(box[0]), int(box[1])), (int(box[2]), int(box[3])), colour_other, 2)
     
     # Convert colour channels back to BGR
     image = cv.cvtColor(image, cv.COLOR_RGB2BGR)
@@ -55,6 +55,6 @@ def labels():
     """
     Returns a dict with relevant labels as keys and their index as value.
     """
-    labels = {"car": 7, "bus": 6, "motorcycle": 14, "bicycle": 2, "person": 15}
+    labels1 = {"car": 7, "bus": 6, "motorcycle": 14, "bicycle": 2, "person": 15}
 
-    return labels
+    return labels1

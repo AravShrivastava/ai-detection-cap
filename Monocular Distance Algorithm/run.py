@@ -32,7 +32,7 @@ def run_program(model_type, video_file, lane_detection, distance_approximation, 
     # Model selection if chosen in command line
     if model_type != None:
         model = Detection_Model(model_type)
-        model.load_model()
+        model.load_model(model_type)
 
     # Prepare input and output
     if (video_file is None):
@@ -184,12 +184,18 @@ if __name__ == '__main__':
 
     # Parse arguments
     parser = argparse.ArgumentParser(description='Select a model and test with camera or video file')
-    parser.add_argument('--model', default=None, choices=supported_models, help='Select a model')
+    parser.add_argument('--model', default=None, choices=supported_models, 
+                        help='Select a model')
     parser.add_argument('--f', default=None, help='Path to .mp4 video file')
-    parser.add_argument('--sample', default=1, help="Sets on how many frames detection should be performed. 1 is on all frame, 2 every other etc.")
-    parser.add_argument('-lanes', default=False, action='store_const', const=True, help='Enable lane detection')
-    parser.add_argument('-distances', default=False, action='store_const', const=True, help='Estimates distances of selected objects')
-    parser.add_argument('-rec', default=False, action='store_const', const=True, help='Write result to .avi file and log data')
+    parser.add_argument('--sample', default=10, 
+                        help="Sets on how many frames detection should be performed. 1 is on all frame, 2 every other etc.")
+    parser.add_argument('-lanes', default=False, action='store_const', const=True, 
+                        help='Enable lane detection')
+    parser.add_argument('-distances', default=False, action='store_const', const=True, 
+                        help='Estimates distances of selected objects')
+    parser.add_argument('-rec', default=False, action='store_const', const=True, 
+                        help='Write result to .avi file and log data')
+    
     args = parser.parse_args()
 
     model_type = args.model
