@@ -187,7 +187,7 @@ if __name__ == '__main__':
     parser.add_argument('--model', default=None, choices=supported_models, 
                         help='Select a model')
     parser.add_argument('--f', default=None, help='Path to .mp4 video file')
-    parser.add_argument('--sample', default=10, 
+    parser.add_argument('--sample', default=2, 
                         help="Sets on how many frames detection should be performed. 1 is on all frame, 2 every other etc.")
     parser.add_argument('-lanes', default=False, action='store_const', const=True, 
                         help='Enable lane detection')

@@ -115,7 +115,7 @@ def pedestrians(frame, boxes, count, focal_length):
         
         bb_text = "{:.0f}m".format(distance)
         font = cv.FONT_HERSHEY_SIMPLEX
-        cv.putText(frame, bb_text, (x1,int(y1-5)), font, 0.8, constants.box_colours()["person"], 2)
+        cv.putText(frame, bb_text, (int(x1),int(y1-5)), font, 0.8, constants.box_colours()["person"], 2)
 
     return frame
 
@@ -164,7 +164,7 @@ def stop_signs(frame, boxes, count, focal_length):
         x1 = int((frame.shape[1]/2) + x_offset)
         y1 = y_offset
 
-        cv.putText(frame, bb_text, (x1,int(y1)), font, 0.8, (0, 0, 255), 2)
+        cv.putText(frame, bb_text, (int(x1),int(y1)), font, 0.8, (0, 0, 255), 2)
 
     return frame
 
