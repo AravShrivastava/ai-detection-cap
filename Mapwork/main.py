@@ -51,10 +51,6 @@ if __name__ == "__main__":
                     speak("Perfect")
                 elif "thank you" in query:
                     speak("you are welcome")
-                elif "Show me the way to " in query:
-                    from SearchNow import searchGoogle
-
-                    searchGoogle(query)
                 elif "weather" in query:
                     search = "temperature in your location"
                     url = f"https://www.google.com/search?q={search}"
