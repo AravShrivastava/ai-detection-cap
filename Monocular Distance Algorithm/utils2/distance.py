@@ -27,7 +27,7 @@ def get_focal_length(video_file):
                     "urban-6": camera2, "urban-7": camera2}
     
     try:
-        fl = focal_lengths[video_file]
+        fl = 600#focal_lengths[video_file]
 
     except KeyError:
         print("No valid focal length found for this video.\nTo use the " 
@@ -70,10 +70,10 @@ def vehicles(frame, boxes, count, focal_length):
 
     # Filter aspect ratio to prevent computing on vehicle side views. Round result to 5m.
     if (width != None) and (height_to_width > .5):
-        distance = np.around((vehicle_width * focal_length) / (width*5), decimals=0)*5
+        distance = np.around((vehicle_width * focal_length) / (width*2), decimals=0)*2
         bb_text = "{:.0f}m".format(distance)
         font = cv.FONT_HERSHEY_SIMPLEX
-        cv.putText(frame, bb_text, (int(x1),int(y1-5)), font, 0.8, constants.box_colours()["motor"], 2)
+        cv.putText(frame, bb_text, (int(x1),int(y1-2)), font, 0.8, constants.box_colours()["motor"], 2)
 
     return frame
 
@@ -111,11 +111,11 @@ def pedestrians(frame, boxes, count, focal_length):
 
     # Filter aspect ratio to prevent computing on vehicle side views. Round result to 5m.
     if (width != None) and (height_to_width > 1.8):
-        distance = np.around((pedestrian_width * focal_length) / (width*5), decimals=0)*5
+        distance = np.around((pedestrian_width * focal_length) / (width*2), decimals=0)*2
         
         bb_text = "{:.0f}m".format(distance)
         font = cv.FONT_HERSHEY_SIMPLEX
-        cv.putText(frame, bb_text, (int(x1),int(y1-5)), font, 0.8, constants.box_colours()["person"], 2)
+        cv.putText(frame, bb_text, (int(x1),int(y1-2)), font, 0.8, constants.box_colours()["person"], 2)
 
     return frame
 
@@ -153,7 +153,7 @@ def stop_signs(frame, boxes, count, focal_length):
 
     # Filter aspect ratio to prevent computing on vehicle side views. Round result to 5m.
     if (width != None) and (height_to_width > .7):
-        distance = np.around((stopsign_width * focal_length) / (width*5), decimals=0)*5
+        distance = np.around((stopsign_width * focal_length) / (width*2), decimals=0)*2
         bb_text = "{:.0f}m".format(distance)
         font = cv.FONT_HERSHEY_SIMPLEX
 
