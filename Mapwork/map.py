@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
-driver = webdriver.Chrome("Desktop\chromedriver.exe")
+driver = webdriver.Chrome("chromedriver.exe")
 driver.get("https://www.google.com/maps/@23.232512,77.430784,12z")
 
 def btnclick(xpath):
