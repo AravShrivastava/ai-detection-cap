@@ -1,6 +1,8 @@
-**ai-detection-cap**
+# README
 
 Project work for competition.
+
+## Required Packages for Project: 
 
 | Package                      | Version     |
 | ---------------------------- | ----------- |
@@ -196,3 +198,9 @@ Project work for competition.
 | wsproto                      | 1.2.0       |
 | xmltodict                    | 0.13.0      |
 | yolo                         | 0.3.1       |
+
+## To-Do
+
+- [ ] Update Mapwork with Google Maps API
+- [ ] Hardware
+- [ ] Presentation
