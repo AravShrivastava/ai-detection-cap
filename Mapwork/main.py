@@ -8,7 +8,7 @@ from time import sleep
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[1].id)
+engine.setProperty('voice', voices[0].id)
 
 
 def speak(audio):
@@ -19,7 +19,7 @@ def speak(audio):
 def takeCommand():
     listener = sr.Recognizer()
     with sr.Microphone() as source:
-        print('listening...')
+        speak('listening...')
         listener.pause_threshold = 1
         listener.energy_threshold= 300
         audio = listener.listen(source,0,4)

@@ -7,6 +7,7 @@ from clint.textui import progress
 
 ap = argparse.ArgumentParser()
 ap.add_argument('-c', '--config', required=True,help = 'path to yolo config file')
+ap.add_argument('-w', '--weights', default=None,help = 'path to weights')
 ap.add_argument('-cl', '--classes', required=True,help = 'path to text file containing class names')
 args = ap.parse_args()
 
@@ -95,8 +96,10 @@ classes = None
 with open(args.classes, 'r') as f:
     classes = [line.strip() for line in f.readlines()]
 COLORS = np.random.uniform(0, 255, size=(len(classes), 3))
-#weights = download_file('https://pjreddie.com/media/files/yolov3.weights')
-net = cv2.dnn.readNet("yolov3.weights", args.config)
+weights = args.weights
+if args.weights == None:
+    weights = download_file('https://pjreddie.com/media/files/yolov3.weights')
+net = cv2.dnn.readNet(weights, args.config)
 while True:
     success, img = image.read()
     blob = cv2.dnn.blobFromImage(img, scale, (416, 416), (0, 0, 0), True, crop=False)
