@@ -201,6 +201,6 @@ Project work for competition.
 
 ## To-Do
 
-- [ ] Update Mapwork with Google Maps API
-- [ ] Hardware
-- [ ] Presentation
+- [x] Update Mapwork with Google Maps API
+- [x] Hardware
+- [x] Presentation
